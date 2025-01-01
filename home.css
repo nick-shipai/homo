@@ -257,12 +257,12 @@ icon {
     }
     
     #header .mBtn {
-        padding: 1rem; /* Reduce padding */
-        font-size: 0.5rem;
+        padding: 1.2rem; /* Reduce padding */
+        font-size: 0.7rem;
     }
 
     #header #menu {
-        margin-left: 0.5rem; /* Reduce margin */
+        margin-left: 0.2rem; /* Reduce margin */
     }
     #getStr {
         font-size: 10px;
