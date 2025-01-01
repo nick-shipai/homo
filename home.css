@@ -39,7 +39,7 @@ body {
 #header #menu {
     justify-content: space-between;
     margin-left: 35rem;
-    padding: 0.8rem;
+    
 }
 
 .active {
@@ -60,6 +60,8 @@ body {
     margin-top: 1rem;
     text-decoration: none;
     border: 2px solid white;
+    justify-content: center;
+    align-items: center;
 }
 
 #getStr:hover {
@@ -75,6 +77,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    text-align: center;
 }
 
 #title {
@@ -107,7 +110,7 @@ body {
 }
 
 #get-str {
-    margin-left: 5rem;
+    margin-left: 4.5;
     height: 45px;
     width: 200px;
     font-size: 1rem;
@@ -117,6 +120,7 @@ body {
     border-radius: 0.7rem;
     cursor: pointer;
     font-weight: bold;
+    
 }
 
 #get-str:hover {
@@ -259,7 +263,7 @@ icon {
     }
 
     #header #menu {
-        margin-left: 1rem; /* Reduce margin */
+        margin-left: 0.5rem; /* Reduce margin */
     }
     #getStr {
         font-size: 5px;
@@ -296,30 +300,3 @@ icon {
     }
 }
 
-/* For larger screens like tablets or laptops */
-@media (min-width: 601px) and (max-width: 1024px) {
-    #header #logo {
-        font-size: 2.5rem;  /* Adjust for tablets */
-    }
-    
-    #header .mBtn {
-        font-size: 1.4rem;  /* Adjust button size */
-    }
-
-    #title {
-        font-size: 3rem;  /* Medium screen font size */
-    }
-
-    #fGrid {
-        flex-direction: row;  /* Keep the items side by side */
-    }
-
-    #unlimited, #media, #coding, #more {
-        width: 45%;  /* Adjust width for tablets */
-        margin-left: 10px;
-    }
-
-    #footer {
-        font-size: 1rem; /* Standard font size */
-    }
-}
