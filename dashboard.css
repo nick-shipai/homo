@@ -66,7 +66,6 @@
 }
 #bodySec {
     display: flex;
-    height: 100vh;
     width: 100vh;
 }
 #menuIcon {
@@ -80,7 +79,6 @@
 #bodyContent {
     width: 100vw;
     background-color: white;
-    height: 100vh;
     border: none;
     border-left: 0px solid black;
 }
