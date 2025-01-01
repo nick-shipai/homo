@@ -290,7 +290,7 @@ icon {
     #unlimited, #media, #coding, #more {
         width: 90%;  /* Make the divs take up less space */
         height: 120px;  /* Adjust height */
-        margin-left: 10px;  /* Remove left margin */
+        margin-left: 15px;  /* Remove left margin */
     }
 
     #footer {
