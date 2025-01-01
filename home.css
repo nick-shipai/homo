@@ -131,7 +131,6 @@ body {
 
 #features {
     background-color: black;
-    height: 100vh;
     width: 100vw;
 }
 
@@ -250,7 +249,7 @@ icon {
 /* For smaller screens like phones */
 @media (max-width: 730px) {
     #header #logo {
-        font-size: 1.2rem;  /* Smaller font size */
+        font-size: 1.3rem;  /* Smaller font size */
         margin: 0.2rem;
     }
     #title {
@@ -291,7 +290,7 @@ icon {
     #unlimited, #media, #coding, #more {
         width: 90%;  /* Make the divs take up less space */
         height: 120px;  /* Adjust height */
-        margin-left: 0;  /* Remove left margin */
+        margin-left: 10px;  /* Remove left margin */
     }
 
     #footer {
