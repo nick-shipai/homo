@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homo - Host File</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="icon" href="icon.png">
+</head>
+<body>
+    <section id="header">
+ <div id="logo">homo</div>
+ <div id="menu">
+    <a href="#"class="active">Home</a>
+    <a href="dashboard.html" class="mBtn">Dashboard</a>
+    <a href="api.html" class="mBtn">Api</a>
+    <a href="sign-up.html" id="getStr">Get Started</a>
+ </div>
+    </section>
+    <section id="body">
+        <h1 id="title">Host Your Files Seamlessly</h1><br><br>
+        <div id="talk">
+            <div id="pa">
+                <h3 id="un">Unlimited</h3>
+                Uploading of All kind
+            </div><br><br>
+            <h1 id="oText">Host Your File</h1><br><br><br><br>
+            <button id="get-str" onclick="window.location.href ='sign-up.html'">Get Started</button><br><br><br><br><br>
+        </div>
+    </section>
+    <section id="features"><br>
+        <h1 id="fTitle">Features</h1><br>
+        <div id="fGrid">
+            <div id="unlimited">
+                <img src="infinity.png" class="fImg">
+                <h3>Unlimited Hosting</h3>
+            </div>
+            <div id="media">
+                <img src="media.png" class="fImg">
+                <h3>Media Hosting</h3>
+            </div>
+            <div id="coding">
+                <img src="web-development.png" class="fImg">
+                <h3>Web Hosting</h3>
+            </div>
+            <div id="more">
+                <img src="more.png" class="fImg">
+                <h3>And More</h3>
+            </div>
+        </div>
+    </section>
+    <footer id="footer">
+        <div id="footer-content">
+            <p>&copy; 2025 Homo - Host File. All rights reserved.</p>
+            <p>
+                <a href="privacy.html" class="footer-link">Privacy Policy</a> | 
+                <a href="terms.html" class="footer-link">Terms of Service</a> | 
+                <a href="contact.html" class="footer-link">Contact Us</a>
+            </p>
+        </div>
+    </footer>    
+    <script type="module">
+        // Import Firebase SDKs
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
+        import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js";
+    
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyDwKsNlw7wUDyQ_yEUhpYZdHIEnWFqQVyc",
+            authDomain: "gyfp-48c48.firebaseapp.com",
+            databaseURL: "https://gyfp-48c48-default-rtdb.firebaseio.com",
+            projectId: "gyfp-48c48",
+            storageBucket: "gyfp-48c48.appspot.com",
+            messagingSenderId: "1098492817072",
+            appId: "1:1098492817072:web:19ffb2510028ad75bf1575"
+        };
+    
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+    
+        onAuthStateChanged(auth, (user) => {
+            const getStrButton = document.getElementById('getStr'); // This is the link
+            const getStrButtonText = document.getElementById('get-str');  // This is a separate button below
+    
+            if (user) {
+                // If the user is logged in, change "Get Started" to user icon and update href
+                getStrButton.innerHTML = '<i class="fas fa-user" id="icon"></i>';
+                getStrButton.href = 'profile.html'; // Change link to user profile page
+    
+                // Update button text and href for the 'get-str' button
+                getStrButtonText.innerHTML = 'Go to Dashboard';
+                getStrButtonText.onclick = function () {
+                    window.location.href = 'dashboard.html'; // Redirect to dashboard
+                };
+            } else {
+                // If not logged in, show "Get Started" button and keep the original link
+                getStrButton.innerHTML = 'Get Started';
+                getStrButton.href = 'sign-up.html'; // Keep the original sign-up link
+    
+                // Update 'get-str' button to point to the sign-up page
+                getStrButtonText.innerHTML = 'Get Started';
+                getStrButtonText.onclick = function () {
+                    window.location.href = 'sign-up.html'; // Redirect to sign-up page
+                };
+            }
+        });
+    
+        document.addEventListener("scroll", () => {
+            const fGrid = document.getElementById("fGrid");
+            const scrollPosition = window.scrollY + window.innerHeight;
+            const pageHeight = document.body.offsetHeight;
+    
+            // Check if the user has scrolled to the bottom of the page
+            if (scrollPosition >= pageHeight) {
+                fGrid.classList.add("visible");
+            }
+        });
+    </script>
+    
+    
+</body>
+</html>
