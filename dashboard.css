@@ -70,3 +70,22 @@
     text-align: center;
     
 }
+#bodySec {
+    display: flex;
+}
+#menuIcon {
+    height: 30px;
+    width: 30px;
+}
+#slideBar {
+    background-color: #d1d1d1;
+    height: 100vh;
+    width: 200px;
+}
+#bodyContent {
+    width: 100vw;
+    background-color: white;
+    height: 100vh;
+    border: none;
+    border-left: 0px solid black;
+}
