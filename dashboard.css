@@ -82,3 +82,55 @@
     border: none;
     border-left: 0px solid black;
 }
+@media (max-width: 730px) {
+    #header #logo {
+        font-size: 1.3rem;  /* Smaller font size */
+        margin: 0.2rem;
+    }
+    #title {
+        font-size: 2rem;
+    }
+    
+    #header .mBtn {
+        padding: 1rem; /* Reduce padding */
+        font-size: 0.5rem;
+    }
+
+    #header #menu {
+        margin-left: 0.5rem; /* Reduce margin */
+    }
+    #getStr {
+        font-size: 5px;
+        padding: 0.3rem;
+    }
+    .active {
+        padding: 1.5rem;
+        font-size: 1rem;
+    }
+    
+    #body {
+        padding: 1rem;  /* Add padding to prevent content from touching edges */
+    }
+
+    #fGrid {
+        flex-direction: column; /* Stack the items vertically */
+        margin-top: 1rem;
+    }
+
+    #fGrid div {
+        width: 90%;  /* Ensure divs don't overflow */
+        margin-bottom: 1rem;
+    }
+
+    #unlimited, #media, #coding, #more {
+        width: 90%;  /* Make the divs take up less space */
+        height: 120px;  /* Adjust height */
+        margin-left: 15px;  /* Remove left margin */
+    }
+
+    #footer {
+        font-size: 0.9rem; /* Smaller font size for mobile */
+
+    }
+}
+
