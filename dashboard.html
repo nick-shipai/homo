@@ -38,16 +38,20 @@
            </section>
            <script>
             const slideBar = document.getElementById("slideBar");
-            const menuIcon = document.getElementById("menuIcon");
-            const leftArrow = document.getElementById("leftArrow");
-        
-            menuIcon.addEventListener("click", () => {
-                slideBar.classList.add("expanded"); // Expand the sidebar
-            });
-        
-            leftArrow.addEventListener("click", () => {
-                slideBar.classList.remove("expanded"); // Collapse the sidebar
-            });
+const menuIcon = document.getElementById("menuIcon");
+const leftArrow = document.getElementById("leftArrow");
+const bodyContent = document.getElementById("bodyContent");
+
+menuIcon.addEventListener("click", () => {
+    slideBar.classList.add("expanded"); // Expand the sidebar
+    bodyContent.style.display = "none"; // Hide body content
+});
+
+leftArrow.addEventListener("click", () => {
+    slideBar.classList.remove("expanded"); // Collapse the sidebar
+    bodyContent.style.display = "block"; // Show body content
+});
+
         </script>        
 </body>
 </html>
