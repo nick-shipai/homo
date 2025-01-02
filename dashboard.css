@@ -6,7 +6,7 @@
 body {
      height: 100vh;
      width: 100vw;
-     overflow-x: hidden; 
+     overflow-y: auto; /* Enables vertical scrolling */
 }
 
 #header {
@@ -77,19 +77,75 @@ body {
     width: 100%;
     height: 100%;
 }
-#menuIcon {
+#slideBar {
+    width: 50px;
+    transition: width 0.3s ease; /* Smooth sliding effect */
+    overflow: hidden; /* Hide content when collapsed */
+    height: 100%;
+    background-color: #f7f7f7;
+}
+
+#slideBar.expanded {
+    width: 300px; /* Expanded width */
+    transition: width 0.3s ease; 
+    background-color: #f0f0f0;
+}
+#content a {
+    display: flex; /* Enable flexbox for horizontal alignment */
+    align-items: center; /* Align items vertically in the center */
+    text-decoration: none; /* Remove underline */
+    margin: 10px 0; /* Add spacing between items */
+    color: black; /* Set default text color */
+    margin-top: 20px;
+    margin-left: -10px;
+    padding: 20px;
+    font-family: monospace;
+    font-weight: bold;
+}
+#content span {
+    font-size: 1.2rem; /* Adjust text size */
+    color: #333; /* Text color */
+    display: none;
+}
+
+#menuIcon, #leftArrow {
     height: 30px;
     width: 30px;
+    cursor: pointer;
+    margin: 10px; /* Add some spacing */
 }
-#slideBar {
-    background-color: #d2d2d2;
-    width: 50px;
+
+#content {
+    margin-top: 20px; /* Add spacing */
+    justify-content: space-between;
+    
 }
+
+#slideBar.expanded #content {
+    display: block; /* Show content when expanded */
+}
+#slideBar.expanded #content span {
+    display: block;
+}
+#leftArrow {
+    display: none; /* Initially hide the left arrow */
+}
+
+#slideBar.expanded #menuIcon {
+    display: none; /* Hide menu icon when expanded */
+}
+
+#slideBar.expanded #leftArrow {
+    display: block; /* Show left arrow when expanded */
+}
+
 #bodyContent {
     width: 100vw;
     background-color: white;
     border: none;
     border-left: 0px solid black;
+    height: calc(100vh - 70px); /* Adjust height based on your header */
+    overflow-y: auto; /* Allow scrolling in this section */
 }
 @media (max-width: 730px) {
     #header #logo {
@@ -116,6 +172,11 @@ body {
     .active {
         padding: 1.5rem;
         font-size: 1rem;
+    }
+    #slideBar {
+        width: 100%;
+        z-index: 2;
+        background-color: none;
     }
     
     #body {
@@ -147,3 +208,18 @@ span {
     color: red;
 }
 
+#top-icon {
+    border: none;
+    border-bottom: 1px solid #d2d2d2;
+}
+#content img {
+    height: 20px;
+    width: 20px;
+    margin-right: 10px; 
+}
+.activeMenu {
+    background-color: #d2d2d2;
+}
+#content a:hover {
+    background-color: #e0e0e0;
+}
