@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title>Homo - Authentication</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Fontawesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="icon" href="icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+<body>
+  <div class="container">
+    <input type="checkbox" id="flip">
+    <div class="cover">
+      <div class="front">
+        <img src="frontImg.webp" alt="">
+        <div class="text">
+          <span class="text-1">Update all files uploaded<br>with new updates</span>
+          <span class="text-2">Let's get connected</span>
+        </div>
+      </div>
+      <div class="back">
+        <img class="backImg" src="backImg.jpg" alt="">
+        <div class="text">
+          <span class="text-1">Upload all kinds of files<br>in one click</span>
+          <span class="text-2">Let's get started</span>
+        </div>
+      </div>
+    </div>
+    <div class="forms">
+      <div class="form-content">
+        <!-- Login Form -->
+        <div class="login-form">
+          <div class="title">Login</div>
+          <form id="loginForm">
+            <div class="input-boxes">
+              <div class="input-box">
+                <i class="fas fa-envelope"></i>
+                <input type="text" id="loginEmail" placeholder="Enter your email">
+              </div>
+              <div class="input-box">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="loginPass" placeholder="Enter your password">
+              </div>
+              <div class="text"><a href="#">Forgot password?</a></div>
+              <div class="button input-box">
+                <input type="submit" value="Login" id="loginSubmit">
+              </div>
+              <div class="text sign-up-text">Don't have an account? <label for="flip">Signup now</label></div>
+            </div>
+          </form>
+        </div>
+        <!-- Signup Form -->
+        <div class="signup-form">
+          <div class="title">Signup</div>
+          <form id="signUpForm">
+            <div class="input-boxes">
+              <div class="input-box">
+                <i class="fas fa-user"></i>
+                <input type="text" id="signUpUsername" placeholder="Enter your name">
+              </div>
+              <div class="input-box">
+                <i class="fas fa-envelope"></i>
+                <input type="text" id="signUpEmail" placeholder="Enter your email">
+              </div>
+              <div class="input-box">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="signUpPassword" placeholder="Enter your password">
+              </div>
+              <div class="button input-box">
+                <input type="submit" value="Submit" id="signUpBtn">
+              </div>
+              <div class="text sign-up-text">Already have an account? <label for="flip">Login now</label></div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div id="errorPopup" class="error-popup hidden">
+      <div class="error-icon">
+        <i class="fas fa-exclamation-circle"></i>
+      </div>
+      <div class="error-message">An error occurred</div>
+    </div>     
+  </div>
+
+  <script type="module">
+    // Import Firebase SDKs
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
+    import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-database.js";
+    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, fetchSignInMethodsForEmail } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js";
+  
+    // Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyDwKsNlw7wUDyQ_yEUhpYZdHIEnWFqQVyc",
+      authDomain: "gyfp-48c48.firebaseapp.com",
+      databaseURL: "https://gyfp-48c48-default-rtdb.firebaseio.com",
+      projectId: "gyfp-48c48",
+      storageBucket: "gyfp-48c48.appspot.com",
+      messagingSenderId: "1098492817072",
+      appId: "1:1098492817072:web:19ffb2510028ad75bf1575"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const database = getDatabase(app);
+    const auth = getAuth(app);
+  
+    // Show error popup
+    function showError(message) {
+      const errorPopup = document.getElementById('errorPopup');
+      const errorIcon = errorPopup.querySelector('.error-icon i');
+      const errorMessage = errorPopup.querySelector('.error-message');
+  
+      // Set the error message
+      errorMessage.textContent = message;
+  
+      // Reset icon animation
+      errorIcon.className = 'fas fa-exclamation-circle';
+      errorPopup.classList.remove('hidden');
+  
+      // Show the popup
+      errorPopup.classList.add('visible');
+  
+      // Start the cancel icon animation after a delay
+      setTimeout(() => {
+        errorIcon.className = 'fas fa-times-circle';
+      }, 1000);
+  
+      // Keep the popup visible for 5 seconds before hiding it
+      setTimeout(() => {
+        errorPopup.classList.remove('visible');
+        errorPopup.classList.add('hidden');
+      }, 5000);  // Adjusted to 5000ms (5 seconds)
+    }
+  
+    // Email validation function
+    function isValidEmail(email) {
+      const re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+      return re.test(String(email).toLowerCase());
+    }
+  
+    // Password validation function
+    function isValidPassword(password) {
+      // Password must be at least 6 characters
+      return password.length >= 6;
+    }
+  
+    // Updated error handling for login
+    document.getElementById('loginForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+  
+      const loginEmail = document.getElementById('loginEmail').value;
+      const loginPass = document.getElementById('loginPass').value;
+  
+      if (!loginEmail || !loginPass) {
+        showError('Please fill in both fields.');
+        return;
+      }
+  
+      if (!isValidEmail(loginEmail)) {
+        showError('Please enter a valid email.');
+        return;
+      }
+  
+      signInWithEmailAndPassword(auth, loginEmail, loginPass)
+        .then((userCredential) => {
+          const user = userCredential.user;
+          alert('Login successful! Welcome, ' + user.email);
+        })
+        .catch((error) => {
+          if (error.code === 'auth/wrong-password' || error.code === 'auth/user-not-found') {
+            showError('Email or password is incorrect.');
+          } else {
+            showError('Login failed: ' + error.message);
+          }
+        });
+    });
+  
+    // Updated error handling for signup
+    document.getElementById('signUpForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+  
+      const signName = document.getElementById('signUpUsername').value;
+      const signEmail = document.getElementById('signUpEmail').value;
+      const signPass = document.getElementById('signUpPassword').value;
+  
+      if (!signName || !signEmail || !signPass) {
+        showError('Please fill in all fields.');
+        return;
+      }
+  
+      if (!isValidEmail(signEmail)) {
+        showError('Please enter a valid email.');
+        return;
+      }
+  
+      if (!isValidPassword(signPass)) {
+        showError('Password must be at least 6 characters long.');
+        return;
+      }
+  
+      // Check if the email already exists
+      fetchSignInMethodsForEmail(auth, signEmail)
+        .then((methods) => {
+          if (methods.length > 0) {
+            showError('Email already exists. Please use a different email.');
+          } else {
+            // Create new user
+            createUserWithEmailAndPassword(auth, signEmail, signPass)
+              .then((userCredential) => {
+                const user = userCredential.user;
+  
+                set(ref(database, 'users/' + user.uid), {
+                  username: signName,
+                  email: signEmail,
+                })
+                  .then(() => {
+                    alert('User created successfully!');
+                  })
+                  .catch((error) => {
+                    showError('Error saving user data: ' + error.message);
+                  });
+              })
+              .catch((error) => {
+                // If email already exists, show custom error message
+                if (error.code === 'auth/email-already-in-use') {
+                  showError('Email already exists. Please use a different email.');
+                } else {
+                  showError('Signup failed: ' + error.message);
+                }
+              });
+          }
+        })
+        .catch((error) => {
+          showError('Error checking email: ' + error.message);
+        });
+    });
+  
+  </script>  
+</body>
+</html>

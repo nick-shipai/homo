@@ -1,0 +1,238 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+     height: 100vh;
+     width: 100vw;
+     overflow-y: auto; /* Enables vertical scrolling */
+}
+
+#header {
+    background-color: #000000;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    width: 100vw;
+}
+
+#header #logo {
+    color: white;
+    font-size: 3rem;
+    font-family: monospace;
+    margin: 0.2rem;
+    padding: 0.2rem;
+}
+
+#header .mBtn {
+    color: grey;
+    padding: 3rem;
+    font-size: 1.5rem;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+
+#header a:hover {
+    color: white;
+}
+
+#header #menu {
+    justify-content: space-between;
+    margin-left: 35rem;
+}
+.active {
+    color: white;
+    padding: 3rem;
+    font-size: 1.5rem;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#getStr {
+    background-color: white;
+    color: black;
+    font-size: 1.2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0.8rem;
+    border-radius: 0.7rem;
+    margin-top: 1rem;
+    text-decoration: none;
+    border: 2px solid white;
+    justify-content: center;
+    align-items: center;
+}
+#getStr:hover {
+    color: white;
+    background-color: black;
+    border-color: white;
+}
+#title {
+    text-align: center;
+    
+}
+#bodySec {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+#slideBar {
+    width: 50px;
+    transition: width 0.3s ease; /* Smooth sliding effect */
+    overflow: hidden; /* Hide content when collapsed */
+    height: 100%;
+    background-color: #f7f7f7;
+    border: none;
+    border-right: 1px solid #d2d2d2;
+}
+
+#slideBar.expanded {
+    width: 300px; /* Expanded width */
+    transition: width 0.3s ease; 
+    background-color: #f0f0f0;
+}
+#content a {
+    display: flex; /* Enable flexbox for horizontal alignment */
+    align-items: center; /* Align items vertically in the center */
+    text-decoration: none; /* Remove underline */
+    margin: 10px 0; /* Add spacing between items */
+    color: black; /* Set default text color */
+    margin-top: 20px;
+    margin-left: -10px;
+    padding: 20px;
+    font-family: monospace;
+    font-weight: bold;
+}
+#content span {
+    font-size: 1.2rem; /* Adjust text size */
+    color: #333; /* Text color */
+    display: none;
+}
+
+#menuIcon, #leftArrow {
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    margin: 10px; /* Add some spacing */
+}
+
+#content {
+    margin-top: 20px; /* Add spacing */
+    justify-content: space-between;
+    
+}
+
+#slideBar.expanded #content {
+    display: block; /* Show content when expanded */
+}
+#slideBar.expanded #content span {
+    display: block;
+}
+#leftArrow {
+    display: none; /* Initially hide the left arrow */
+}
+
+#slideBar.expanded #menuIcon {
+    display: none; /* Hide menu icon when expanded */
+}
+
+#slideBar.expanded #leftArrow {
+    display: block; /* Show left arrow when expanded */
+}
+
+#bodyContent {
+    width: 100vw;
+    background-color: white;
+    border: none;
+    border-left: 0px solid black;
+    height: calc(100vh - 70px); /* Adjust height based on your header */
+    overflow-y: auto; /* Allow scrolling in this section */
+}
+@media (max-width: 730px) {
+    #header #logo {
+        font-size: 1.3rem;  /* Smaller font size */
+        margin: 0.2rem;
+    }
+    #title {
+        font-size: 2rem;
+    }
+    
+    #header .mBtn {
+        padding: 1.0rem; /* Reduce padding */
+        font-size: 0.5rem;
+    }
+
+    #header #menu {
+        margin-left: 0.1rem; /* Reduce margin */
+    }
+    #getStr {
+        font-size: 10px;
+        padding: 0.5rem;
+        margin-left: -10px;
+    }
+    .active {
+        padding: 1.5rem;
+        font-size: 1rem;
+    }
+    #slideBar {
+        z-index: 2;
+        background-color: white;
+    }
+    #slideBar.expanded {
+        width: 100vw; /* Expanded width */
+        transition: width 0.3s ease; 
+        background-color: #f0f0f0;
+    }
+    #bodyContent {
+        border: none;
+        
+    }
+    #slideBar.expanded ~ #bodyContent {
+        display: none; /* Hide body content when the sidebar is expanded */
+    }
+    
+    #body {
+        padding: 1rem;  /* Add padding to prevent content from touching edges */
+    }
+
+    #fGrid {
+        flex-direction: column; /* Stack the items vertically */
+        margin-top: 1rem;
+    }
+
+    #fGrid div {
+        width: 90%;  /* Ensure divs don't overflow */
+        margin-bottom: 1rem;
+    }
+
+    #unlimited, #media, #coding, #more {
+        width: 90%;  /* Make the divs take up less space */
+        height: 120px;  /* Adjust height */
+        margin-left: 15px;  /* Remove left margin */
+    }
+
+    #footer {
+        font-size: 0.9rem; /* Smaller font size for mobile */
+
+    }
+}
+span {
+    color: red;
+}
+
+#top-icon {
+    border: none;
+    border-bottom: 1px solid #d2d2d2;
+}
+#content img {
+    height: 20px;
+    width: 20px;
+    margin-right: 10px; 
+}
+.activeMenu {
+    background-color: #d2d2d2;
+}
+#content a:hover {
+    background-color: #e0e0e0;
+}

@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#header {
+    background-color: #000000;
+    height: 70px;
+    display: flex;
+    align-items: center;
+}
+
+#header #logo {
+    color: white;
+    font-size: 3rem;
+    font-family: monospace;
+    margin: 0.2rem;
+    padding: 0.2rem;
+}
+
+#header .mBtn {
+    color: grey;
+    padding: 3rem;
+    font-size: 1.5rem;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+
+#header a:hover {
+    color: white;
+}
+
+#header #menu {
+    justify-content: space-between;
+    margin-left: 35rem;
+    padding: 0.8rem;
+}
+.active {
+    color: white;
+    padding: 3rem;
+    font-size: 1.5rem;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#getStr {
+    background-color: white;
+    color: black;
+    font-size: 1.2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0.8rem;
+    border-radius: 0.7rem;
+    margin-top: 1rem;
+    text-decoration: none;
+    border: 2px solid white;
+}
+#getStr:hover {
+    color: white;
+    background-color: black;
+    border-color: white;
+}
+
+#body {
+        background-image: url('background.webp');
+        height: 100vh;
+      
+}
+#title {
+    text-align: center;
+    
+}
