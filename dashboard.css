@@ -83,6 +83,8 @@ body {
     overflow: hidden; /* Hide content when collapsed */
     height: 100%;
     background-color: #f7f7f7;
+    border: none;
+    border-right: 1px solid #d2d2d2;
 }
 
 #slideBar.expanded {
@@ -184,7 +186,7 @@ body {
     }
     #bodyContent {
         border: none;
-        border-left: 1px solid #d2d2d2;
+        
     }
     #slideBar.expanded ~ #bodyContent {
         display: none; /* Hide body content when the sidebar is expanded */
