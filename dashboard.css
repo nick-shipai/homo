@@ -174,9 +174,13 @@ body {
         font-size: 1rem;
     }
     #slideBar {
-        width: 100%;
         z-index: 2;
-        background-color: none;
+        background-color: white;
+    }
+    #slideBar.expanded {
+        width: 100vw; /* Expanded width */
+        transition: width 0.3s ease; 
+        background-color: #f0f0f0;
     }
     
     #body {
