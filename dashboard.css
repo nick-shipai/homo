@@ -185,10 +185,9 @@ body {
     #bodyContent {
         border: none;
         border-left: 1px solid #d2d2d2;
-    }
-   #slideBar.expanded #bodyContent {
         display: none;
     }
+   
     
     #body {
         padding: 1rem;  /* Add padding to prevent content from touching edges */
