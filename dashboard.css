@@ -106,11 +106,11 @@ body {
     }
 
     #header #menu {
-        margin-left: 0.5rem; /* Reduce margin */
+        margin-left: 0.1rem; /* Reduce margin */
     }
     #getStr {
-        font-size: 5px;
-        padding: 0.3rem;
+        font-size: 10px;
+        padding: 0.5rem;
     }
     .active {
         padding: 1.5rem;
@@ -141,5 +141,8 @@ body {
         font-size: 0.9rem; /* Smaller font size for mobile */
 
     }
+}
+span {
+    color: red;
 }
 
