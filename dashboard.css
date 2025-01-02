@@ -42,7 +42,6 @@ body {
 #header #menu {
     justify-content: space-between;
     margin-left: 35rem;
-    padding: 0.8rem;
 }
 .active {
     color: white;
@@ -73,7 +72,8 @@ body {
 }
 #bodySec {
     display: flex;
-    width: 100vh;
+    width: 100%;
+    height: 100%;
 }
 #menuIcon {
     height: 30px;
@@ -111,7 +111,7 @@ body {
         padding: 0.3rem;
     }
     .active {
-        padding: 1.5rem;
+        padding: 1.3rem;
         font-size: 1rem;
     }
     
