@@ -173,20 +173,20 @@ body {
     
     #header .mBtn {
         padding: 1.0rem; /* Reduce padding */
-        font-size: 0.5rem;
+        font-size: 0.7rem;
     }
 
     #header #menu {
-        margin-left: 0.1rem; /* Reduce margin */
+        margin-left: 0.7rem; /* Reduce margin */
     }
     #getStr {
         font-size: 10px;
         padding: 0.5rem;
-        margin-left: -10px;
+        margin-left: 5px;
     }
     .active {
-        padding: 1.5rem;
-        font-size: 1rem;
+        padding: 1.0rem;
+        font-size: 0.7rem;
     }
     #slideBar {
         z-index: 2;
@@ -448,16 +448,17 @@ span {
     #sto-text {
         font-size: 1.3rem;
         margin-top: 27px;
+        margin-left: 10px;
     }
     #sto-top {
-        margin-left: -30px;
+        margin-left: -80px;
     }
     #img-sto, #files, #others, #total {
     margin-top: 30px;
     font-size: 0.8rem;
     font-weight: bold;
     font-family: monospace;
-    margin-left: 1rem;
+    margin-left: -30px;
     }
     #appName {
         font-size: 1.1rem;
@@ -494,5 +495,34 @@ span {
     }
     #lineDiv {
         margin-top: 270px;
+    }
+    #bText {
+        margin-left: 2rem;
+    }
+    #img-size-con {
+        font-size: 1.5rem;
+        margin-left: -15px;
+    }
+    #other-size-con {
+        font-size: 1.5rem;
+        margin-left: -7px;
+    }
+    #others {
+        margin-top: 10rem;
+    }
+    #file-size-con {
+        font-size: 1.5rem;
+        
+    }
+    #files {
+        margin-left: 25px;
+        margin-top: 6rem;
+    }
+    #total {
+        margin-top: 19.3rem;
+        margin-left: -96px;
+    }
+    #total-size-con {
+        font-size: 1.5rem;
     }
 }

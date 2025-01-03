@@ -261,20 +261,21 @@ icon {
     }
     
     #header .mBtn {
-        padding: 1rem; /* Reduce padding */
-        font-size: 0.5rem;
+        padding: 1.0rem; /* Reduce padding */
+        font-size: 0.7rem;
     }
 
     #header #menu {
-        margin-left: 0.5rem; /* Reduce margin */
+        margin-left: 0.7rem; /* Reduce margin */
     }
     #getStr {
         font-size: 10px;
         padding: 0.5rem;
+        margin-left: 5px;
     }
     .active {
-        padding: 1.5rem;
-        font-size: 1rem;
+        padding: 1.0rem;
+        font-size: 0.7rem;
     }
     
     #body {
