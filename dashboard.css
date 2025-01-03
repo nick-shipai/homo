@@ -6,7 +6,8 @@
 body {
      height: 100vh;
      width: 100vw;
-     overflow-y: auto; /* Enables vertical scrolling */
+    overflow-x: hidden;
+     
 }
 
 #header {
@@ -15,7 +16,14 @@ body {
     display: flex;
     align-items: center;
     width: 100vw;
+    border: none;
+    border-bottom: 1px solid #d2d2d2;
+
+    position: sticky; /* Makes the header sticky */
+    top: 0; /* Keeps the header at the top */
+    z-index: 1000; /* Ensures the header is above other content */
 }
+
 
 #header #logo {
     color: white;
@@ -76,6 +84,8 @@ body {
     display: flex;
     width: 100%;
     height: 100%;
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
 #slideBar {
     width: 50px;
@@ -85,6 +95,8 @@ body {
     background-color: #f7f7f7;
     border: none;
     border-right: 1px solid #d2d2d2;
+    scroll-behavior: smooth;
+    overflow-y: auto; /* Allow vertical scrolling */
 }
 
 #slideBar.expanded {
@@ -142,12 +154,13 @@ body {
 }
 
 #bodyContent {
-    width: 100vw;
+    width: 100%;
     background-color: white;
     border: none;
     border-left: 0px solid black;
-    height: calc(100vh - 70px); /* Adjust height based on your header */
+    height: 100%;
     overflow-y: auto; /* Allow scrolling in this section */
+    scroll-behavior: smooth;
 }
 @media (max-width: 730px) {
     #header #logo {
@@ -186,6 +199,8 @@ body {
     }
     #bodyContent {
         border: none;
+        justify-content: center;
+        align-items: center;
         
     }
     #slideBar.expanded ~ #bodyContent {
@@ -235,4 +250,158 @@ span {
 }
 #content a:hover {
     background-color: #e0e0e0;
+}
+#productDiv {
+    background-color: black;
+    color: white;
+    height: 400px;
+    border-radius: 15px;
+    width: 90%;
+    justify-content: center;
+    margin-top: 10px;
+}
+#productDivCon {
+    display: flex;
+    justify-content: center; /* Horizontally center the child element */
+    align-items: center; /* Vertically center the child element */
+    
+}
+#appName {
+    font-size: 3rem;
+    font-family: monospace;
+    margin-left: 7rem;
+    margin-top: 1.2rem;
+}
+#top-talk {
+    display: flex;
+}
+#plan {
+    font-size: 1.2rem;
+    background-color: #333333;
+    margin-top: 2rem;
+    margin-left: 40px;
+    border: 1px solid #d2d2d2;
+    color: white;
+    border-radius: 10px;
+    width: 120px;
+    height: 30px;
+    cursor: pointer;
+}
+#app img {
+    height: 30px;
+    margin-left: -10px;
+}
+#app {
+    font-size: 1.2rem;
+    background-color: #333333;
+    margin-top: 2rem;
+    border: 1px solid #d2d2d2;
+    color: white;
+    border-radius: 10px;
+    width: 200px;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center; /* Horizontally center the child element */
+    align-items: center; /* Vertically center the child element */
+    margin-left: 7rem;
+    cursor: pointer;
+}
+#app div {
+    margin-left: 10px;
+}
+#app:hover, #plan:hover, #addPro:hover {
+  background-color: #4d4d4d;
+}
+#appCon {
+    display: flex;
+}
+#addPro {
+    font-size: 1.2rem;
+    background-color: #333333;
+    margin-top: 2rem;
+    border: 1px solid #d2d2d2;
+    color: white;
+    border-radius: 10px;
+    width: 200px;
+    height: 50px;
+    cursor: pointer;
+    padding: 1rem;
+    margin-left: 15px;
+    cursor: pointer;
+}
+#bText {
+    font-size: 1.6rem;
+    font-family: monospace;
+    margin-left: 7rem;
+    margin-top: 35px;
+}
+#buildCon {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+#buildDiv {
+    background-color: white;
+    color: black;
+    height: 500px;
+    border-radius: 15px;
+    width: 90%;
+    margin-top: 10px;
+    border: 1px solid black;
+    display: flex;
+}
+/* Scrollbar styling */
+#bodyContent::-webkit-scrollbar {
+    width: 8px; /* Set the width of the scrollbar */
+}
+
+#bodyContent::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Scrollbar track color */
+    border-radius: 4px;
+}
+
+#bodyContent::-webkit-scrollbar-thumb {
+    background: #888; /* Scrollbar thumb color */
+    border-radius: 4px;
+}
+
+#bodyContent::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Thumb color on hover */
+}
+#sto-icon {
+    height: 30px;
+    margin-left: 50px;
+    margin-top: 30px;
+}
+#sto-text {
+    font-size: 2rem;
+    font-family: monospace;
+    font-weight: bold;
+    margin-top: 23px;
+    margin-left: 20px;
+}
+#sto-top {
+    display: flex;
+}
+#img-sto, #files, #others {
+    margin-left: 50px;
+    margin-top: 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: monospace;
+}
+#img-size-con, #file-size-con, #other-size-con {
+    display: flex;
+    font-size: 2.5rem;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+#img-size-wrd, #file-size-wrd, #other-size-wrd {
+    margin-left: 5px;
+}
+#files {
+    margin-top: 90px;
+    margin-left: 30rem;
 }
