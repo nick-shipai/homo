@@ -231,6 +231,10 @@ body {
         font-size: 0.9rem; /* Smaller font size for mobile */
 
     }
+
+    #productDiv {
+      width: 100%;
+    }
 }
 span {
     color: red;
@@ -264,6 +268,8 @@ span {
     display: flex;
     justify-content: center; /* Horizontally center the child element */
     align-items: center; /* Vertically center the child element */
+    margin-bottom: 100px;
+    width: 100%;
     
 }
 #appName {
@@ -315,6 +321,8 @@ span {
 }
 #appCon {
     display: flex;
+    align-items: center;
+    
 }
 #addPro {
     font-size: 1.2rem;
@@ -326,9 +334,7 @@ span {
     width: 200px;
     height: 50px;
     cursor: pointer;
-    padding: 1rem;
     margin-left: 15px;
-    cursor: pointer;
 }
 #bText {
     font-size: 1.6rem;
@@ -384,24 +390,109 @@ span {
 #sto-top {
     display: flex;
 }
-#img-sto, #files, #others {
-    margin-left: 50px;
+#img-sto, #files, #others, #total {
     margin-top: 30px;
     font-size: 1.2rem;
     font-weight: bold;
     font-family: monospace;
+    margin-left: 1.5rem;
 }
-#img-size-con, #file-size-con, #other-size-con {
+#img-size-con, #file-size-con, #other-size-con, #total-size-con {
     display: flex;
     font-size: 2.5rem;
     justify-content: center;
     align-items: center;
     margin-top: 10px;
 }
-#img-size-wrd, #file-size-wrd, #other-size-wrd {
+#img-size-wrd, #file-size-wrd, #other-size-wrd, #total-size-wrd {
     margin-left: 5px;
 }
 #files {
-    margin-top: 90px;
-    margin-left: 30rem;
+    margin-left: 350px;
+}
+#storage {
+    height: 100%;
+    height: 100%;
+    margin-left: 50px;
+}
+#files {
+    margin-top: 97px; /* Add spacing between them */
+}
+#other-size-con {
+    margin-left: -150px;
+}
+#others {
+    margin-top: 150px;
+}
+#total {
+    margin-top: 20rem;
+    margin-left: -148px;
+}
+#line {
+    font-size: 1.6rem;
+    font-family: monospace;
+    text-decoration: none;
+    color: blue;
+
+}
+#lineDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 350px;
+}
+@media (max-width: 730px) {
+    #sto-icon {
+        height: 20px;
+    }
+    #sto-text {
+        font-size: 1.3rem;
+        margin-top: 27px;
+    }
+    #sto-top {
+        margin-left: -30px;
+    }
+    #img-sto, #files, #others, #total {
+    margin-top: 30px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    font-family: monospace;
+    margin-left: 1rem;
+    }
+    #appName {
+        font-size: 1.1rem;
+        margin-left: 1rem;
+    }
+    #plan {
+        width: 100px;
+        height: 20px;
+        font-size: 0.7rem;
+        margin-top: 20px;
+        margin-left: 15px;
+    }
+    #app {
+    width: 170px;
+    height: 40px;
+    font-size: 1rem;
+    margin-left: 0.2rem;
+    }
+    #app div {
+        margin-left: 5px;
+    }
+    #addPro {
+        height: 40px;
+        font-size: 1rem;
+        width: 180px;
+    }
+    #app img {
+        height: 20px;
+        margin-left: -5px;
+        
+    }
+    #line {
+        font-size: 1rem;
+    }
+    #lineDiv {
+        margin-top: 270px;
+    }
 }

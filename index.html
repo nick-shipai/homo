@@ -87,12 +87,12 @@
             if (user) {
                 // If the user is logged in, change "Get Started" to user icon and update href
                 getStrButton.innerHTML = '<i class="fas fa-user" id="icon"></i>';
-                getStrButton.href = 'profile.html'; // Change link to user profile page
+                getStrButton.href = '/profile'; // Change link to user profile page
     
                 // Update button text and href for the 'get-str' button
                 getStrButtonText.innerHTML = 'Go to Dashboard';
                 getStrButtonText.onclick = function () {
-                    window.location.href = 'dashboard.html'; // Redirect to dashboard
+                    window.location.href = '/dashboard'; // Redirect to dashboard
                 };
             } else {
                 // If not logged in, show "Get Started" button and keep the original link

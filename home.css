@@ -6,6 +6,7 @@
 
 body {
      height: 100vh;
+     overflow-x: hidden;
 }
 
 #header {
@@ -79,6 +80,7 @@ body {
 #body {
     background-image: url('background.webp');
     height: 100%;
+    width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -173,7 +175,7 @@ body {
     cursor: pointer;
 }
 
-#unlimited h3, #media h3, #coding h3 {
+#unlimited h3, #media h3, #coding h3, #more h3 {
     font-family: monospace;
     font-size: 1.3rem;
     font-weight: bold;
@@ -250,258 +252,6 @@ icon {
     color: white;
 }
 
-/* Responsive Styles */
-
-/* For smaller screens like phones */
-/* General Styles - Existing */
-* {
-    margin: 0;
-    padding: 0;
-}
-
-body {
-     height: 100vh;
-}
-
-#header {
-    background-color: #000000;
-    height: 70px;
-    display: flex;
-    align-items: center;
-    width: 100vw;
-}
-
-#header #logo {
-    color: white;
-    font-size: 3rem;
-    font-family: monospace;
-    margin: 0.2rem;
-    padding: 0.2rem;
-}
-
-#header .mBtn {
-    color: grey;
-    padding: 3rem;
-    font-size: 1.5rem;
-    text-decoration: none;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-#header a:hover {
-    color: white;
-}
-
-#header #menu {
-    justify-content: space-between;
-    margin-left: 35rem;
-    
-}
-
-.active {
-    color: white;
-    padding: 3rem;
-    font-size: 1.5rem;
-    text-decoration: none;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-#getStr {
-    background-color: white;
-    color: black;
-    font-size: 1.2rem;
-    font-family: Arial, Helvetica, sans-serif;
-    padding: 0.8rem;
-    border-radius: 0.7rem;
-    margin-top: 1rem;
-    text-decoration: none;
-    border: 2px solid white;
-    justify-content: center;
-    align-items: center;
-}
-
-#getStr:hover {
-    color: white;
-    background-color: black;
-    border-color: white;
-}
-
-#body {
-    background-image: url('background.webp');
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-}
-
-#title {
-    text-align: center;
-    color: white;
-    text-shadow: 
-        -2px -2px 0 black, 
-        2px -2px 0 black, 
-        -2px 2px 0 black, 
-        2px 2px 0 black;
-    font-size: 4rem;
-    font-weight: bold; 
-    font-family: monospace;
-}
-
-#talk {
-    align-items: center;
-}
-
-#pa, #oText {
-    text-align: center;
-    color: white;
-    text-shadow: 
-        -2px -2px 0 black, 
-        2px -2px 0 black,  
-        -2px 2px 0 black,  
-        2px 2px 0 black;
-    font-weight: bold; 
-    font-family: monospace;
-}
-
-#get-str {
-    margin-left: 4.5;
-    height: 45px;
-    width: 200px;
-    font-size: 1rem;
-    color: white;
-    background-color: black;
-    border: 2px solid black;
-    border-radius: 0.7rem;
-    cursor: pointer;
-    font-weight: bold;
-    
-}
-
-#get-str:hover {
-    background-color: white;
-    color: black;
-    transform: scale(0.98);
-}
-
-#features {
-    background-color: black;
-    width: 100vw;
-}
-
-#fTitle {
-    text-align: center;
-    color: white;
-    text-shadow: 
-        -2px -2px 0 black, 
-        2px -2px 0 black,  
-        -2px 2px 0 black,  
-        2px 2px 0 black;
-    font-size: 3rem;
-    font-weight: bold; 
-    font-family: monospace;
-}
-
-#fGrid div {
-    background-color: white;
-}
-
-.fImg {
-    height: 70px;
-    margin-top: 20px;
-}
-
-#unlimited, #media, #coding, #more {
-    width: 300px;
-    justify-content: center;
-    text-align: center;
-    border-radius: 1rem;
-    height: 150px;
-    align-items: center;
-    margin-left: 10px;
-    cursor: pointer;
-}
-
-#unlimited h3, #media h3, #coding h3 {
-    font-family: monospace;
-    font-size: 1.3rem;
-    font-weight: bold;
-    text-align: center;
-}
-
-/* Keyframes */
-@keyframes slideInFromLeft {
-    from {
-        transform: translateX(-100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-#fGrid {
-    display: flex;
-    justify-content: center;
-    opacity: 0;
-    transform: translateX(-100%);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-#fGrid.visible {
-    animation: slideInFromLeft 2s ease forwards;
-    opacity: 1;
-    transform: translateX(0);
-}
-
-#footer {
-    background-color: #000000;
-    color: white;
-    text-align: center;
-    padding: 1rem 0;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1rem;
-    border-top: 2px solid #444;
-    width: 100vw;
-}
-
-#footer .footer-link {
-    color: grey;
-    text-decoration: none;
-    margin: 0 0.5rem;
-}
-
-#footer .footer-link:hover {
-    color: white;
-}
-
-/* Add transform scale to all buttons */
-button, #getStr, #get-str {
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-button:hover, #getStr:hover, #get-str:hover {
-    transform: scale(1.05);
-}
-
-/* Add transform scale to #fGrid div elements */
-#fGrid div {
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-#fGrid div:hover {
-    transform: scale(1.1);
-    background-color: #e0e0e0;
-}
-
-icon {
-    color: white;
-}
-
-/* Responsive Styles */
-
-/* For smaller screens like phones */
 @media (max-width: 730px) {
     #header #logo {
         font-size: 1.3rem;  /* Smaller font size */
@@ -555,4 +305,22 @@ icon {
 }
 span {
     color: red;
+}
+/* Add this to your home.css */
+#title, #talk{
+    opacity: 0;
+    transform: translateY(50px); /* Start slightly lower */
+    animation: riseUp 1s ease-out forwards; /* Apply animation */
+}
+
+/* Define the keyframe for the rise-up animation */
+@keyframes riseUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
